@@ -12,7 +12,7 @@
 
           <div>
             <h2 class="pull-left">Zuhar</h2>
-            <timepicker class="pull-right" [(ngModel)]="zuhr"></timepicker>
+            <timepicker class="pull-right" [(ngModel)]="dohr"></timepicker>
           </div>
           <br>
           <div>
@@ -22,7 +22,7 @@
           <br>
           <div>
             <h2 class="pull-left">Maghrib</h2>
-            <timepicker class="pull-right" [(ngModel)]="maghrb"></timepicker>
+            <timepicker class="pull-right" [(ngModel)]="maghrib"></timepicker>
           </div>
           <br>
           <div>
@@ -38,27 +38,56 @@
         </div>
       </div>
 
-     
+
       <div class="col-md-6">
-        <div class="row" class="text-center">
-            <div>
+        <div style="margin-top: 15px;">
+          <div>
+            <div style="text-align:center">
               <h2>Announcements</h2>
-              <textarea [(ngModel)]="announcements" rows="10" cols="60"></textarea>
             </div>
-            <br><br>
+            <br>
+            <ul>
+              <li *ngFor="let data of myItems; let i=index" style="font-size: 18px; margin-bottom: 10px; display: inline-flex;">
+                - {{data.Value}}
+                &nbsp;
+                <a (click)="EditItem(i)" style="float: right;padding-right: 8px;">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a (click)="DeleteItem(i)" style="float: right;">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <br>
+              </li>
+              <p *ngIf="myItems.length == 0" style="font-size: 18px; text-align: center;">
+                No announcements uptill now.
+              </p>
+            </ul>
+            <br>
+
             <div>
-              <h2>News</h2>
-              <textarea [(ngModel)]="news" rows="5" cols="60"></textarea>
-            </div>
-
-            <br><br>
-
-            <div class="pull-right">
-              <button class="btn btn-lg btn-primary"(click)="submit()">Submit</button>
+              <div class="form-group">
+                <!-- Form that gets user input -->
+                <form name="itemForm">
+                  <textarea id="Value" rows="3" name="Value" required [(ngModel)]="newItem.Value" minlength="3"
+                    placeholder="Enter Announcement" class="form-control"></textarea>
+                </form>
+                <br>
+                <!-- Add button to add record -->
+                <div class="text-center">
+                  <button type="submit" (click)="AddItem()" [disabled]="IsForUpdate == true" class="btn btn-default">Add</button>
+                  <!-- Update button to submit updated value -->
+                  &nbsp;
+                  <button type="submit" (click)="UpdateItem()" [disabled]="IsForUpdate == false" class="btn btn-default">Update</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-     
+        <div class="pull-right">
+            <button class="btn btn-lg btn-primary" (click)="submit()">Submit</button>
+          </div>
+      </div>
+
 
     </div>
   </div>
