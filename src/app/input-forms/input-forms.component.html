@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <h2 class="text-center">Add Desired Timings and Feeds</h2>
+      <div class="col-md-6">
+        <div class="row" style="display:grid;">
+          <div>
+            <h2 class="pull-left">Fajr</h2>
+            <timepicker class="pull-right" [(ngModel)]="fajr"></timepicker>
+          </div>
+          <br>
+
+          <div>
+            <h2 class="pull-left">Zuhar</h2>
+            <timepicker class="pull-right" [(ngModel)]="zuhr"></timepicker>
+          </div>
+          <br>
+          <div>
+            <h2 class="pull-left">Asar</h2>
+            <timepicker class="pull-right" [(ngModel)]="asar"></timepicker>
+          </div>
+          <br>
+          <div>
+            <h2 class="pull-left">Maghrib</h2>
+            <timepicker class="pull-right" [(ngModel)]="maghrb"></timepicker>
+          </div>
+          <br>
+          <div>
+            <h2 class="pull-left">Isha</h2>
+            <timepicker class="pull-right" [(ngModel)]="isha"></timepicker>
+          </div>
+          <br>
+          <div>
+            <h2 class="pull-left">Jumma</h2>
+            <timepicker class="pull-right" [(ngModel)]="jumma"></timepicker>
+          </div>
+
+        </div>
+      </div>
+
+     
+      <div class="col-md-6">
+        <div class="row" class="text-center">
+            <div>
+              <h2>Announcements</h2>
+              <textarea [(ngModel)]="announcements" rows="10" cols="60"></textarea>
+            </div>
+            <br><br>
+            <div>
+              <h2>News</h2>
+              <textarea [(ngModel)]="news" rows="5" cols="60"></textarea>
+            </div>
+
+            <br><br>
+
+            <div class="pull-right">
+              <button class="btn btn-lg btn-primary"(click)="submit()">Submit</button>
+            </div>
+          </div>
+        </div>
+     
+
+    </div>
+  </div>
+</div>
