@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clocks-and-feeds',
@@ -15,9 +16,18 @@ export class ClocksAndFeedsComponent implements OnInit {
     'jummah'
   ];
 
-  constructor() { }
+  namazTimings = {}
+
+  constructor(public route: Router) { }
 
   ngOnInit() {
+    if(!JSON.parse(localStorage.getItem("namazTimings"))){
+      this.route.navigate(['/AddTimings']);
+    }else{
+      this.namazTimings = JSON.parse(localStorage.getItem("namazTimings"));
+      console.log(this.namazTimings);
+    }
+
     this.namaz.forEach((element) => {
       this.drawClock(element);
 });
@@ -31,12 +41,12 @@ export class ClocksAndFeedsComponent implements OnInit {
     var radius = canvas['height'] / 2;
     ctx.translate(radius, radius);
     radius = radius * 0.90
-    drawClock();
+    drawClock(canvas_name);
 
-function drawClock() {
+function drawClock(canvas_name) {
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
+  drawTime(canvas_name,ctx, radius);
 }
 
 function drawFace(ctx, radius) {
@@ -76,8 +86,10 @@ function drawNumbers(ctx, radius) {
   }
 }
 
-function drawTime(ctx, radius){
-    var now = new Date();
+function drawTime(canvas_name, ctx, radius){
+    if(canvas_name === 'fajar'){
+      var now = this.namazTimings.fajar;
+    }
     var hour = now.getHours();
     var minute = now.getMinutes();
     var second = now.getSeconds();
