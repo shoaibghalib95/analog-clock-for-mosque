@@ -15,14 +15,21 @@ export class MyItems {
 })
 export class InputFormsComponent implements OnInit {
 
-  fajr;
+  fajar;
   dohr;
   asar;
   maghrib;
   isha;
-  jumma;
+  jummah;
 
-  namazTimings = {}
+  namazTimings = {
+    fajar: '',
+    dohr: '',
+    asar: '',
+    maghrib: '',
+    isha: '',
+    jummah: '',
+  }
 
 
   // Array where we are going to do CRUD operations    
@@ -34,14 +41,19 @@ export class InputFormsComponent implements OnInit {
   updatedItem;
 
   constructor() {
-    this.namazTimings = JSON.parse(localStorage.getItem("namazTimings"));
+    this.namazTimings.fajar = localStorage.getItem("fajar");
+    this.namazTimings.dohr = localStorage.getItem("dohr");
+    this.namazTimings.asar = localStorage.getItem("asar");
+    this.namazTimings.maghrib = localStorage.getItem("maghrib");
+    this.namazTimings.isha = localStorage.getItem("isha");
+    this.namazTimings.jummah = localStorage.getItem("jummah");
     if(this.namazTimings){
-      this.fajr = this.namazTimings['fajar'];
+      this.fajar = this.namazTimings['fajar'];
       this.dohr = this.namazTimings['dohr'];
       this.asar = this.namazTimings['asar'];
       this.maghrib = this.namazTimings['maghrib'];
       this.isha = this.namazTimings['isha'];
-      this.jumma = this.namazTimings['jumma'];
+      this.jummah = this.namazTimings['jummah'];
     }
 
     this.myItems = JSON.parse(localStorage.getItem("announcements"));
@@ -60,15 +72,20 @@ export class InputFormsComponent implements OnInit {
 
   submit() {
     this.namazTimings = {
-      fajar: this.fajr,
+      fajar: this.fajar,
       dohr: this.dohr,
       asar: this.asar,
       maghrib: this.maghrib,
       isha: this.isha,
-      jumma: this.jumma
+      jummah: this.jummah
     }
-
-    localStorage.setItem("namazTimings", JSON.stringify(this.namazTimings));
+    
+    localStorage.setItem("fajar", this.fajar);
+    localStorage.setItem("dohr", this.dohr);
+    localStorage.setItem("asar", this.asar);
+    localStorage.setItem("maghrib", this.maghrib);
+    localStorage.setItem("isha", this.isha);
+    localStorage.setItem("jummah", this.jummah);
     localStorage.setItem("announcements", JSON.stringify(this.myItems));
   }
 
