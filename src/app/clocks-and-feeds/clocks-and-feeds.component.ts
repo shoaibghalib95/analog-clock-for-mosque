@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+export class MyItems {
+  Value: string;
+  constructor(Value: string) {
+    this.Value = Value;
+  }
+}
+
 @Component({
   selector: 'app-clocks-and-feeds',
   templateUrl: './clocks-and-feeds.component.html',
@@ -15,6 +22,7 @@ export class ClocksAndFeedsComponent implements OnInit {
     'isha',
     'jummah'
   ];
+  myItems: MyItems[] = new Array();
 
   namazTimings = {
     fajar: '',
@@ -48,7 +56,7 @@ export class ClocksAndFeedsComponent implements OnInit {
         this.drawClock1(element);
       });
     }
-
+    this.myItems = JSON.parse(localStorage.getItem("announcements"));
   }
 
   drawClock1(canvas_name) {

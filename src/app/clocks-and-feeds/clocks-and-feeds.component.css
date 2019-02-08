@@ -1,22 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
-.page { 
-  min-height: 100%;
-  min-width: 100%;
-  background: url(../../assets/images/blur-blurred-background-colors-754082.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 canvas {
   padding-left: 6px;
 }
-
+.page{
+  margin-left: -50px;
+}
 .namaz-name{
   margin-top:0;
   margin-bottom:20px;
-  color:#fff;
+  color:#222;
 }
 .clock {
     border-radius: 60%;

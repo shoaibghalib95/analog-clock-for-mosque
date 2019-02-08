@@ -10,12 +10,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ClocksAndFeedsComponent } from './clocks-and-feeds/clocks-and-feeds.component';
 import { InputFormsComponent } from './input-forms/input-forms.component';
+import { DigiclockComponent } from './digiclock/digiclock.component';
+import { AnalogclockComponent } from './analogclock/analogclock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClocksAndFeedsComponent,
-    InputFormsComponent
+    InputFormsComponent,
+    DigiclockComponent,
+    AnalogclockComponent
   ],
   imports: [
     BrowserModule,

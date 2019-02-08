@@ -55,7 +55,7 @@ export class InputFormsComponent implements OnInit {
       this.isha = this.namazTimings['isha'];
       this.jummah = this.namazTimings['jummah'];
     }
-
+    
     this.myItems = JSON.parse(localStorage.getItem("announcements"));
     if(!this.myItems){
       this.myItems = [];
