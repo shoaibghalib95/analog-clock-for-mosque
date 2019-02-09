@@ -1,9 +1,14 @@
+<div class="bg"></div>
 <div class="container">
   <div class="row">
-    <div class="col-md-12 ">
-      <h2 class="text-center">Add Desired Timings and Feeds</h2>
-      <div class="col-md-6">
-        <div class="row" style="display:grid;">
+    <div class="col-lg-12 col-md-12 ">
+
+      <h1 class="text-center" style="margin-bottom: 30px;">Add Desired Timings and Feeds</h1>
+
+      <div class="col-lg-6 col-md-6">
+        <div class="row" style="display:grid;padding-left: 25px;
+        padding-right: 25px;">
+
           <div>
             <h2 class="pull-left">Fajr</h2>
             <timepicker class="pull-right" [(ngModel)]="fajar"></timepicker>
@@ -39,8 +44,9 @@
       </div>
 
 
-      <div class="col-md-6">
-        <div style="margin-top: 15px;">
+      <div class="col-lg-6 col-md-6">
+        <div class="row" style="padding-left: 25px;
+        padding-right: 25px;">
           <div>
             <div style="text-align:center">
               <h2>Announcements</h2>
@@ -83,9 +89,10 @@
             </div>
           </div>
         </div>
+
         <div class="pull-right">
-            <button class="btn btn-lg btn-primary" (click)="submit()" [routerLink]="['/Timing']">Submit</button>
-          </div>
+          <button class="btn btn-md submtbtn" (click)="submit()" [routerLink]="['/Timing']">Submit</button>
+        </div>
       </div>
 
 

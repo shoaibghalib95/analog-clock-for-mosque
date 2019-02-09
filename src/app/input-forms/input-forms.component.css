@@ -1,0 +1,17 @@
+.bg {
+    /* Full height */
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f5f9fa;
+    width: 100%;
+    height: calc(100vh + 1px);
+    position: absolute;
+  }
+
+.submtbtn {
+    width: 100px;
+    background-color: transparent;
+    border: 1px solid black;
+}

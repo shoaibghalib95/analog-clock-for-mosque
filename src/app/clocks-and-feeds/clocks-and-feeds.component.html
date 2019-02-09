@@ -1,95 +1,99 @@
-<div class="page">
+<div class="bg"></div>
 <div class="container">
-<div class="row">
-    <div class="col-lg-2 col-md-2 col-lg-offset-10 col-md-offset-10">
-      <button type="submit" (click)="Setting()" class="btn btn-primary btn-block" [routerLink]="['/AddTimings']">Setting</button>
-    </div>
-<div class="row" style="text-align: center; margin-bottom: 30px;">
-  <h1>Centiniel Maderessa</h1>
-</div>
   <div class="row">
-    <div class="col-lg-6" style="margin-left:-150px;">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 ">
+    <div class="col-lg-12 col-md-12 text-center" style="margin-bottom: 30px;">
+      <button class="pull-right addBtn" [routerLink]="['/AddTimings']">Add Timings & Feeds</button>
+      <div>
+        <p style="font-weight: 500;font-size: 50px;">Centiniel Maderessa</p>
+      </div>
+    </div>
+
+    <div style="display: table;">
+      <div class="col-lg-4 col-md-4" style="display: table-cell;vertical-align: middle;">
+        <div class="col-lg-6 col-md-6 ">
           <div class="text-center">
-        
+
             <canvas id="fajar">
             </canvas>
             <h2 class="namaz-name">Fajar</h2>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 ">
+
+        <div class="col-lg-6 col-md-6 ">
           <div class="text-center">
-      
+
             <canvas id="dohr">
             </canvas>
             <h2 class="namaz-name">Dohr</h2>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 ">
+
+        <div class="col-lg-6 col-md-6 ">
           <div class="text-center">
-          
+
             <canvas id="asar">
             </canvas>
-          <h2 class="namaz-name">Asar</h2>
+            <h2 class="namaz-name">Asar</h2>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 ">
+
+        <div class="col-lg-6 col-md-6 ">
           <div class="text-center">
-          
+
             <canvas id="maghrib">
             </canvas>
-          <h2 class="namaz-name">Maghrib</h2>
+            <h2 class="namaz-name">Maghrib</h2>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 ">
+
+        <div class="col-lg-6 col-md-6 ">
           <div class="text-center">
-          
+
             <canvas id="isha">
             </canvas>
             <h2 class="namaz-name">Isha</h2>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 ">
+
+        <div class="col-lg-6 col-md-6">
           <div class="text-center">
-          
+
             <canvas id="jummah">
             </canvas>
             <h2 class="namaz-name">Jummah</h2>
           </div>
-        </div>  
         </div>
       </div>
-      <div style="margin-top:50px;margin-left: 50px;" class="col-lg-2 col-md-2">
-        <div class="row" style="margin-bottom:350px;">
-        <app-analogclock> </app-analogclock>
-        </div>
-        <div class="row">
-        <app-digiclock> </app-digiclock>
-        </div>
-        
 
+      <div class="col-lg-4 col-md-4 text-center" style="display: table-cell;vertical-align: middle;">
+        <div style="margin-top: 100px;">
+          <div>
+            <app-analogclock></app-analogclock>
+          </div>
+          <div>
+            <app-digiclock> </app-digiclock>
+          </div>
+        </div>
       </div>
-      <div style="margin-top:80px; margin-left: 100px;" class="col-lg-4 col-md-4">
-            <div style="text-align:center">
-              <h2>Announcements</h2>
-            </div>
-        <ol style="text-align:center">
-              <li *ngFor="let data of myItems; let i=index" style="font-size: 18px; margin-bottom: 10px;">
-                - {{data.Value}}
-                <br>
-              </li>
-              <p *ngIf="myItems.length == 0" style="font-size: 18px; text-align: center;">
-                No announcements uptill now.
-              </p>
-            </ol>
+
+
+      <div class="col-lg-4 col-md-4 " style="display: table-cell;vertical-align: middle;">
+
+        <div class="text-center" style="margin-bottom:20px;">
+          <h1>Announcements</h1>
+        </div>
+
+        <ul style="list-style:none;">
+          <li *ngFor="let data of myItems; let i=index" style="font-size: 20px; margin-bottom: 10px;">
+            - {{data.Value}}
+            <br>
+          </li>
+        </ul>
+        <p class="text-center" *ngIf="myItems.length == 0" style="font-size: 22px; margin-top: 40px;">
+          No announcements uptill now
+        </p>
       </div>
-   </div>
-   
-   </div>
+
+    </div>
   </div>
 </div>
