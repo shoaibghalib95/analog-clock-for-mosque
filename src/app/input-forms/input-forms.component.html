@@ -6,8 +6,7 @@
       <h1 class="text-center" style="margin-bottom: 30px;">Add Desired Timings and Feeds</h1>
 
       <div class="col-lg-6 col-md-6">
-        <div class="row" style="display:grid;padding-left: 25px;
-        padding-right: 25px;">
+        <div class="row" style="display:grid;padding-left: 25px;padding-right: 25px;">
 
           <div>
             <h2 class="pull-left">Fajr</h2>
@@ -53,7 +52,8 @@
             </div>
             <br>
             <ul>
-              <li *ngFor="let data of myItems; let i=index" style="font-size: 18px; margin-bottom: 10px; display: inline-flex;">
+              <li *ngFor="let data of myItems; let i=index"
+                style="font-size: 18px; margin-bottom: 10px; display: inline-flex;">
                 - {{data.Value}}
                 &nbsp;
                 <a (click)="EditItem(i)" style="float: right;padding-right: 8px;">
@@ -80,10 +80,12 @@
                 <br>
                 <!-- Add button to add record -->
                 <div class="text-center">
-                  <button type="submit" (click)="AddItem()" [disabled]="IsForUpdate == true" class="btn btn-default">Add</button>
+                  <button type="submit" (click)="AddItem()" [disabled]="IsForUpdate == true"
+                    class="btn btn-default">Add</button>
                   <!-- Update button to submit updated value -->
                   &nbsp;
-                  <button type="submit" (click)="UpdateItem()" [disabled]="IsForUpdate == false" class="btn btn-default">Update</button>
+                  <button type="submit" (click)="UpdateItem()" [disabled]="IsForUpdate == false"
+                    class="btn btn-default">Update</button>
                 </div>
               </div>
             </div>
