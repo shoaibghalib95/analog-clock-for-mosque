@@ -65,7 +65,7 @@ export class ClocksAndFeedsComponent implements OnInit {
     var ctx = canvas.getContext("2d");
     var radius = canvas['height'] / 2;
     ctx.translate(radius, radius);
-    radius = radius * 0.80
+    radius = radius * 0.90
     drawClock(canvas_name);
 
     function drawClock(canvas_name) {
