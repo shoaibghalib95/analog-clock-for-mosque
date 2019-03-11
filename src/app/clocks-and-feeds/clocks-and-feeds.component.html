@@ -1,16 +1,48 @@
 <div class="bg"></div>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 col-md-12 text-center" style="margin-bottom: 30px;">
+    <div class="col-lg-12 col-xl-12 col-md-12 text-center" style="margin-bottom: 30px;">
       <button class="pull-right addBtn" [routerLink]="['/AddTimings']">Add Timings & Feeds</button>
       <div>
         <p style="font-weight: 500;font-size: 50px; color: white;">Centiniel Maderessa</p>
       </div>
     </div>
 
-    <div style="display: table;">
-      <div class="col-lg-4 col-md-4" style="display: table-cell;vertical-align: middle;">
-        <div class="col-lg-6 col-md-6 ">
+    <div class="col-lg-12 col-xl-12 col-md-12 text-center" style="display: block;">
+      
+
+      <div class="col-lg-4 col-xl-4 col-md-4 col-lg-offset-1 col-xl-offset-1 col-md-offset-1 text-center" style="display: table-cell;vertical-align: middle;">
+        <div style="text-align:center;">
+            <app-analogclock></app-analogclock>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-lg-4 col-md-4" style="display: table-cell;">
+      </div>
+
+      <div class="col-xl-4 col-xl-offset-3 col-lg-4 col-lg-offset-3 col-md-offset-3 col-md-4 " style="display: table-cell;vertical-align: middle;">
+
+        <div class="text-center" style="margin-bottom:20px;">
+          <h1>Announcements</h1>
+        </div>
+
+        <ul style="list-style:none;height: 150px;overflow-y: auto;">
+          <li *ngFor="let data of myItems; let i=index" style="font-size: 20px; margin-bottom: 10px;">
+            - {{data.Value}}
+            <br>
+          </li>
+          <li class="text-center" *ngIf="myItems.length == 0" style="font-size: 22px; margin-top: 40px;">
+          No announcements uptill now
+        </li>
+        </ul>
+        
+      </div>
+      
+
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 text-center" style="display: table">
+      <div class="col-xl-6 col-lg-6 col-md-6" style="display: table-cell;vertical-align: middle;">
+        <div class="col-xl-4 col-lg-4 col-md-4 ">
           <div class="text-center">
 
             <canvas id="fajar">
@@ -19,7 +51,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 ">
+        <div class="col-xl-4 col-lg-4 col-md-4 ">
           <div class="text-center">
 
             <canvas id="dohr">
@@ -28,7 +60,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 ">
+        <div class="col-xl-4 col-lg-4 col-md-4 ">
           <div class="text-center">
 
             <canvas id="asar">
@@ -37,7 +69,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 ">
+        <div class="col-xl-4 col-lg-4 col-md-4 ">
           <div class="text-center">
 
             <canvas id="maghrib">
@@ -46,7 +78,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 ">
+        <div class="col-xl-4 col-lg-4 col-md-4 ">
           <div class="text-center">
 
             <canvas id="isha">
@@ -55,7 +87,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6">
+        <div class="col-xl-4 col-lg-4 col-md-4">
           <div class="text-center">
 
             <canvas id="jummah">
@@ -64,36 +96,6 @@
           </div>
         </div>
       </div>
-
-      <div class="col-lg-4 col-md-4 text-center" style="display: table-cell;vertical-align: middle;">
-        <div style="margin-top: 100px;">
-          <div>
-            <app-analogclock></app-analogclock>
-          </div>
-          <div>
-            <app-digiclock> </app-digiclock>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 " style="display: table-cell;vertical-align: middle;">
-
-        <div class="text-center" style="margin-bottom:20px;">
-          <h1>Announcements</h1>
-        </div>
-
-        <ul style="list-style:none;">
-          <li *ngFor="let data of myItems; let i=index" style="font-size: 20px; margin-bottom: 10px;">
-            - {{data.Value}}
-            <br>
-          </li>
-        </ul>
-        <p class="text-center" *ngIf="myItems.length == 0" style="font-size: 22px; margin-top: 40px;">
-          No announcements uptill now
-        </p>
-      </div>
-
     </div>
   </div>
 </div>
